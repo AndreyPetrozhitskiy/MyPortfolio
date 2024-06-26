@@ -1,0 +1,31 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+.Header {
+	width: 100%;
+	height: 60px;
+	border: 2px solid $primary-color;
+	// border-radius: 0px 10px 10px 0px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	&__menu {
+		width: auto;
+		@include flex-row-center;
+		gap: 20px;
+		padding-left: 10px;
+		a {
+			display: block;
+			font-size: $h6-size;
+			transition: all 0.3s;
+		}
+		&--active {
+			display: block;
+			font-size: $h6-size;
+			text-decoration: underline;
+			transition: all 0.3s;
+		}
+	}
+}

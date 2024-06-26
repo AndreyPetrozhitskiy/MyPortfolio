@@ -1,0 +1,32 @@
+@use 'variables' as *;
+@mixin flex-row-center {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+@mixin flex-column-center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+@mixin responsive-hug {
+	@media (min-width: 1200px) {
+		width: $hug-large;
+	}
+
+	@media (min-width: 992px) and (max-width: 1199.98px) {
+		width: $hug-medium;
+	}
+
+	@media (min-width: 768px) and (max-width: 991.98px) {
+		width: $hug-small;
+	}
+
+	@media (min-width: 576px) and (max-width: 767.98px) {
+		width: $hug-xsmall;
+	}
+
+	@media (max-width: 575.98px) {
+		width: $hug-xxsmall;
+	}
+}

@@ -1,0 +1,87 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 100%;
+	min-height: 1080px;
+	height: 100%;
+}
+
+main {
+	width: 100%;
+	height: 100%;
+	background-color: $light--background-color;
+	color: $light--text-color;
+	display: flex;
+	justify-content: center;
+	transition: all 0.4s;
+	padding: 10px;
+	a {
+		text-decoration: none;
+		color: rgba(0, 0, 0, 0.651);
+		transition: text-decoration 1s;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+main.dark {
+	width: 100%;
+	min-height: 1080px;
+	height: 100%;
+	background-color: $dark--background-color;
+	color: $dark--text-color;
+	a {
+		color: rgba(255, 255, 255, 0.732);
+	}
+}
+
+// Адаптивный размер
+.container {
+	@include responsive-hug;
+	padding: 10px;
+	height: auto;
+}
+@media (min-width: 1200px) {
+	main {
+		min-width: 1200px;
+	}
+}
+
+/* Для разрешений от 992px до 1199.98px */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	main {
+		min-width: 992px;
+		max-width: 1199.98px;
+	}
+}
+
+/* Для разрешений от 768px до 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+	main {
+		min-width: 768px;
+		max-width: 991.98px;
+	}
+}
+
+/* Для разрешений от 576px до 767.98px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	main {
+		min-width: 576px;
+		max-width: 767.98px;
+	}
+}
+
+/* Для разрешений < 576px */
+@media (max-width: 575.98px) {
+	main {
+		max-width: 575.98px;
+	}
+}

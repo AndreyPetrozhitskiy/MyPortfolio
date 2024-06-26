@@ -1,0 +1,19 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+.Home {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	&__projects {
+		width: 100%;
+		@include flex-column-center;
+		gap: 10px;
+		a {
+			width: 100%;
+			font-size: $h4-size;
+			margin-left: 10px;
+		}
+	}
+}
